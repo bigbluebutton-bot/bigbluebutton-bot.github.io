@@ -10,6 +10,7 @@ GITHUB_API = "https://api.github.com"
 APP_ID = os.environ['APP_ID']
 INSTALLATION_ID = os.environ['INSTALLATION_ID']
 PRIVATE_KEY = os.environ['PRIVATE_KEY']
+ORG_NAME = os.environ['ORG_NAME']
 
 def create_jwt():
     """Create a JWT (JSON Web Token) for GitHub App authentication."""
