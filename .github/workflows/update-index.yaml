@@ -3,7 +3,7 @@ name: Propagate File Updates
 on:
   push:
     paths:
-      - 'docs/index.html'
+      - 'index.html'
 
 jobs:
   update-file:

@@ -74,21 +74,22 @@ def update_file(repo_name, file_path, content, commit_message, token):
     response.raise_for_status()
 
 def main():
-    file_path = 'docs/index.html'
+    from_file_path = 'index.html'
+    to_file_path = 'docs/index.html'
     commit_message = '🤖 Update docs/index.html'
     
     # Obtain installation token
     token = get_installation_token()
 
     # Read the updated file content
-    with open(file_path, "rb") as file:
+    with open(from_file_path, "rb") as file:
         content = file.read().decode('utf-8')
 
     for repo in get_repos(token):
         repo_name = repo['name']
-        if file_exists(repo_name, file_path, token):
+        if file_exists(repo_name, to_file_path, token):
             print(f"Updating file in {repo_name}")
-            update_file(repo_name, file_path, content, commit_message, token)
+            update_file(repo_name, to_file_path, content, commit_message, token)
 
 if __name__ == "__main__":
     main()
