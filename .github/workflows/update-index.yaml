@@ -1,0 +1,29 @@
+name: Propagate File Updates
+
+on:
+  push:
+    paths:
+      - 'docs/index.html'
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+
+    - name: Copy and Update File
+      run: python ./scripts/update-script.py
+      env:
+        APP_ID: ${{ secrets.APP_ID }}  # GitHub App ID
+        INSTALLATION_ID: ${{ secrets.INSTALLATION_ID }}  # Installation ID of the GitHub App
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}  # Private key of the GitHub App
+        ORG_NAME: ${{ github.repository_owner }}  # Name of the organization
