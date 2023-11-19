@@ -1,3 +1,4 @@
+from base64 import b64encode
 import os
 import time
 import jwt
@@ -85,6 +86,9 @@ def main():
     # Read the updated file content
     with open(from_file_path, "rb") as file:
         content = file.read().decode('utf-8')
+        # base64 encode the content
+        content = content.encode('utf-8')
+        content = b64encode(content).decode('utf-8')
 
     for repo in get_repos(token):
         repo_name = repo['name']
