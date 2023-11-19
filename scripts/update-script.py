@@ -28,7 +28,7 @@ def create_jwt():
 
     # Encode the JWT
     encoded_jwt = jwt.encode(payload, private_key, algorithm='RS256')
-    return encoded_jwt.decode('utf-8')
+    return encoded_jwt 
 
 def get_installation_token():
     """Obtain an installation access token for the GitHub App."""
