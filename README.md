@@ -1,7 +1,7 @@
 # 🤖 BigBlueButton Bot Development 🚀
 
 <p align="center">
-  <img src="https://github.com/bigbluebutton-bot/.github/blob/main/profile/img/logo-small.png" alt="BigBlueButton Bot Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/bigbluebutton-bot/.github/main/profile/img/logo-small.png" alt="BigBlueButton Bot Logo" width="200"/>
 </p>
 
 Welcome to our BigBlueButton (BBB) bots project! We're developing innovative bots for BigBlueButton (BBB). Our mission is to enhance the BBB experience through intelligent automation, real-time assistance, and a strong commitment to open-source values and high-performance solutions.
